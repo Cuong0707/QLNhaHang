@@ -6,80 +6,111 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class ConnectDatabase {
-    private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl="jdbc:sqlserver://localhost;database=QLNHAHANG_NHOM3";
-    private static String username="sa";
-    private static String password="123456";
-    static{
-        try {            
-            Class.forName(driver);
-        } 
-        catch (ClassNotFoundException ex) {
-            throw new RuntimeException(ex);
+    //    private static Connection connect = null;
+//    static String user ="root";
+//    static String pass = "1234567908";
+//    static int port = 3306;
+//    static String databaseName = "EduSys";
+
+    public static Connection getSqlConnection(String user, String pass, String databaseName, int port) {
+        String db_url = "";
+        Connection connect = null;
+        if (port == 3306) {
+            db_url = "jdbc:mysql://localhost:" + port + "/" + databaseName;
+        } else {
+            db_url = "jdbc:sqlserver://localhost:" + port + ";databaseName=" + databaseName + ";";
         }
+
+        try {
+            connect = (Connection) DriverManager.getConnection(db_url, user, pass);
+            System.out.println("Kết nối thành công!");
+        } catch (SQLException ex) {
+            System.out.println("Lỗi kết nối: " + ex);
+        }
+//        System.out.println(connect);
+        return connect;
     }
-    
-    
-    public static PreparedStatement getStmt(String sql, Object...args) throws SQLException{
-        java.security.Security.setProperty("jdk.tls.disabledAlgorithms","SSLv3, RC4, DES, MD5withRSA, DH keySize < 1024,EC keySize < 224, 3DES_EDE_CBC, anon, NULL");      
-        Connection connection = DriverManager.getConnection(dburl, username, password);
+
+    public static PreparedStatement getStmt(String sql, Object... args) {
+        Connection connect = getSqlConnection("root", "1234567908", "EduSys", 3306);
         PreparedStatement pstmt = null;
-        if(sql.trim().startsWith("{")){
-            pstmt = connection.prepareCall(sql);
-            // Nếu câu lệnh SQL có tồn tại dấu { (lệnh starsWith trả về true) thì dùng prepareCall gọi PROC
-        }
-        else{
-            pstmt = connection.prepareStatement(sql);
-            // Biên dịch 1 lần câu lệnh SQL
-        }
         
-        for(int i=0;i<args.length;i++){
-            pstmt.setObject(i + 1, args[i]); 
+        try {
+            pstmt = sql.trim().startsWith("{") ? connect.prepareCall(sql) : connect.prepareStatement(sql);
+            /* Minh bạch:
+                if (sql.trim().startsWith("{")) {
+                    pstmt = conn.prepareCall(sql);
+                } 
+                else {
+                    pstmt = conn.prepareStatement(sql);
+                } 
+             */
+
+            for (int i = 0; i < args.length; i++) {
+                pstmt.setObject(i + 1, args[i]);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Lỗi kết nối: " + ex);
         }
         return pstmt;
     }
+
     
-    // Truy vấn
-    public static ResultSet query(String sql, Object...args) {
+    public static ResultSet queryData(String sql, Object... args) {
         try {
-            PreparedStatement stmt = ConnectDatabase.getStmt(sql, args);
+            PreparedStatement stmt = getStmt(sql, args);
             return stmt.executeQuery();
-        } 
-        catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+        } catch (SQLException ex) {
+            System.out.println("Lỗi 'queryData': " + ex);
+            throw new RuntimeException(ex);
         }
+//        return null;
     }
-    
-    public static void update(String sql, Object...args) {
+
+    public static int updateData(String sql, Object... args) {
         try {
-            PreparedStatement stmt = ConnectDatabase.getStmt(sql, args);
-            try {
-                stmt.executeUpdate();
-            } 
-            finally{
-                stmt.getConnection().close();
-            }
-        } 
-        catch (SQLException e) {
-            throw new RuntimeException(e);
+            PreparedStatement stmt = getStmt(sql, args);
+            return stmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("Lỗi 'updateData': " + ex);
         }
+        return 0;
     }
-    
-    public static Object value(String sql, Object...args) {
-        try {
-            ResultSet rs = ConnectDatabase.query(sql, args);
-            if(rs.next()){
-                return rs.getObject(0);
-            }
-            rs.getStatement().getConnection().close();
-            return null;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } 
+
+    public static Object value(String sql, Object... args) throws SQLException {
+        ResultSet rs = queryData(sql, args);
+        if (rs.next()){
+            return rs.getObject(0);
+        }
         
+        rs.getStatement().getConnection().close();
+        return null;
+    }
+    
+    
+    public static List<Object[]> valueList(String sql, int numCols, Object... args) {
+        try {
+            List<Object[]> list = new ArrayList<>();
+            ResultSet rs = queryData(sql, args);
+            if(rs == null) {
+                return null;
+            }
+            while (rs.next()) {
+                Object[] row = new Object[numCols];
+                for (int i = 0; i < numCols; i++) {
+                    row[i] = rs.getObject(i + 1);
+                }
+                list.add(row);
+            }
+            return list;
+        } catch (Exception e) {
+            System.out.println("Lỗi 'value': " + e);
+        }
+        return null;
     }
 }
