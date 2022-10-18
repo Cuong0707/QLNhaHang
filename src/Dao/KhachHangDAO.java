@@ -21,21 +21,21 @@ public class KhachHangDAO extends MainDAO<KhachHang, String>{
     @Override
     public void insert(KhachHang model) {
        String sql="INSERT INTO KhachHang (MaKH,HoTenKH,SoDT,DiaChi) VALUES (?, ?, ?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMaKH(),model.getHoTenKH(),model.getSoDT(),model.getDiaChi());
     }
 
     @Override
     public void update(KhachHang model) {
         String sql = "UPDATE KhachHang SET HoTenKH = ?, SoDT =?, DiaChi=? WHERE MaKH =  ?";
-        ConnectDatabase.update(sql,
+        ConnectDatabase.updateData(sql,
                model.getHoTenKH(),model.getSoDT(),model.getDiaChi(),model.getMaKH());
     }
 
     @Override
     public void delete(String id) {
          String sql="DELETE FROM KhachHang WHERE MaKH = ?";
-        ConnectDatabase.update(sql, id);
+        ConnectDatabase.updateData(sql, id);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class KhachHangDAO extends MainDAO<KhachHang, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     KhachHang entity = new KhachHang();
                     entity.setMaKH(rs.getString("MaKH"));

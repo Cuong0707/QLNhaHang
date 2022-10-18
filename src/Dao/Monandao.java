@@ -22,7 +22,7 @@ public class Monandao extends MainDAO<Monan, String>{
     @Override
     public void insert(Monan model) {
         String sql="INSERT INTO MonAn (MaMon, TenMon, DonGia,DonViHoaDon, MaLoaiMon) VALUES (?, ?, ?, ?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMamoan(),model.getTenmon(),model.getDongia(),model.getDovitinh(),model.getLoaimonan());
                 
     }
@@ -30,13 +30,13 @@ public class Monandao extends MainDAO<Monan, String>{
     @Override
     public void update(Monan model) {
          String sql="UPDATE MonAn SET TenMon = ?, DonGia = ?, DonViHoaDon = ?, MaLoaiMon = ? WHERE MaMon = ?";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
          model.getTenmon(),model.getDongia(),model.getDovitinh(),model.getLoaimonan(),model.getMamoan());}
 
     @Override
     public void delete(String id) {
         String sql = "DELETE FROM MonAn WHERE MaMon=?";
-        ConnectDatabase.update(sql, id);
+        ConnectDatabase.updateData(sql, id);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Monandao extends MainDAO<Monan, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                   Monan entity = new Monan();
                    entity.setMamoan(rs.getString("MaMon"));

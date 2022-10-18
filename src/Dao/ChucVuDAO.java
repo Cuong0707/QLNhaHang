@@ -20,14 +20,14 @@ public class ChucVuDAO extends MainDAO<ChucVu, String> {
     @Override
     public void insert(ChucVu model) {
          String sql="INSERT INTO ChucVu (MaCV, ChucVu) VALUES (?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMaCV(),model.getChucVu());
           }
 
     @Override
     public void update(ChucVu model) {
          String sql="UPDATE ChucVu SET ChucVu = ? WHERE MaCV = ?";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getChucVu(),model.getMaCV());
          }
     
@@ -35,7 +35,7 @@ public class ChucVuDAO extends MainDAO<ChucVu, String> {
     @Override
     public void delete(String MaCV) {
         String sql="DELETE FROM ChucVu WHERE MaCV=?";
-        ConnectDatabase.update(sql, MaCV);
+        ConnectDatabase.updateData(sql, MaCV);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class ChucVuDAO extends MainDAO<ChucVu, String> {
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     ChucVu entity=new ChucVu();
                     entity.setMaCV(rs.getString("MaCV"));

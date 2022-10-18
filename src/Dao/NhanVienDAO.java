@@ -10,21 +10,21 @@ import java.util.List;
 public class NhanVienDAO extends MainDAO<NhanVien, String>{
     public void insert(NhanVien model){
         String sql="INSERT INTO NhanVien (MaNV, HotenNV, GioiTinh, SoDT, DiaChi, MaCV, MaCaTruc, Luong, MatKhau) VALUES (?, ?, ?, ?, ?, ? ,? ,? ,?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
               model.getMaNV(),model.getHoTen(),model.getGioiTinh(),model.getsDt(),model.getDiaChi(),
                 model.getMaCv(),model.getMaCatruc(),model.getLuong(),model.getMatKhau());
     }
     
     public void update(NhanVien model){
         String sql="UPDATE NhanVien SET HotenNV=?, GioiTinh=?, SoDT=?, Diachi=?, MaCV= ?, MaCaTruc= ?, Luong = ? , Matkhau = ? WHERE MaNV=?";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getHoTen(),model.getGioiTinh(),model.getsDt(),model.getDiaChi(),
                 model.getMaCv(),model.getMaCatruc(),model.getLuong(),model.getMatKhau(),model.getMaNV());
     }
     
     public void delete(String MaNV){
         String sql="DELETE FROM NhanVien WHERE MaNV=?";
-        ConnectDatabase.update(sql, MaNV);
+        ConnectDatabase.updateData(sql, MaNV);
     }
     
     public List<NhanVien> selectAll(){
@@ -48,7 +48,7 @@ public class NhanVienDAO extends MainDAO<NhanVien, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     NhanVien entity=new NhanVien();
                     entity.setMaNV(rs.getString("MaNV"));

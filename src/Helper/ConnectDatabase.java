@@ -37,7 +37,7 @@ public class ConnectDatabase {
     }
 
     public static PreparedStatement getStmt(String sql, Object... args) {
-        Connection connect = getSqlConnection("root", "1234567908", "EduSys", 3306);
+        Connection connect = getSqlConnection("sa", "123456", "QLNHAHANG_NHOM3", 1433);
         PreparedStatement pstmt = null;
         
         try {

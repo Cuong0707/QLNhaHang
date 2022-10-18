@@ -21,7 +21,7 @@ public class LoaiMonDAO extends MainDAO<LoaiMon, String>{
     @Override
     public void insert(LoaiMon model) {
       String sql="INSERT INTO LoaiMon (MaLoaiMon, TenLoaiMon) VALUES (?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMaLoaiMon(),model.getTenLoaiMon());
                    
     }
@@ -29,7 +29,7 @@ public class LoaiMonDAO extends MainDAO<LoaiMon, String>{
     @Override
     public void update(LoaiMon model) {
        String sql = "UPDATE LoaiMon SET  TenLoaiMon = ? Where   MaLoaiMon  = ?";
-        ConnectDatabase.update(sql,
+        ConnectDatabase.updateData(sql,
                model.getTenLoaiMon(),model.getMaLoaiMon());
      
     }
@@ -37,7 +37,7 @@ public class LoaiMonDAO extends MainDAO<LoaiMon, String>{
     @Override
     public void delete(String id) {
         String sql="DELETE FROM LoaiMon WHERE MaLoaiMon=?;";
-        ConnectDatabase.update(sql, id);
+        ConnectDatabase.updateData(sql, id);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class LoaiMonDAO extends MainDAO<LoaiMon, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     LoaiMon entity = new LoaiMon();
                     entity.setMaLoaiMon(rs.getString("MaLoaiMon"));

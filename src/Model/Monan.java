@@ -15,6 +15,17 @@ public class Monan {
     String dovitinh;
     String loaimonan;
 
+    public Monan() {
+    }
+
+    public Monan(String mamoan, String tenmon, double dongia, String dovitinh, String loaimonan) {
+        this.mamoan = mamoan;
+        this.tenmon = tenmon;
+        this.dongia = dongia;
+        this.dovitinh = dovitinh;
+        this.loaimonan = loaimonan;
+    }
+
  
  
 

@@ -11,6 +11,14 @@ package Model;
 public class ChucVu {
     String MaCV;
     String ChucVu;
+
+    public ChucVu() {
+    }
+
+    public ChucVu(String MaCV, String ChucVu) {
+        this.MaCV = MaCV;
+        this.ChucVu = ChucVu;
+    }
     
   
     public String getMaCV() {

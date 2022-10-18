@@ -12,6 +12,7 @@ import Model.ChucVu;
 import Model.LoaiNgLieu;
 import Model.NguyenLieu;
 import Model.NhanVien;
+import com.sun.jdi.DoubleValue;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.util.List;
@@ -807,9 +808,8 @@ public class ThemMoi extends javax.swing.JFrame {
             if (nl.getManguyenlieu().equalsIgnoreCase(maNL)) {
                 txtmanguyenlieu.setText(nl.getManguyenlieu());
                 txttennguyenlieu.setText(nl.getTenNguyenLieu());
-                txtdonvitinh.setText(nl.getDonvitinh());
-                txtdiachi.setText(nl.getSoluong());
-                txtsoluong.setText(nl.getSoluong());
+                txtdonvitinh.setText(nl.getDonvitinh());            
+                txtsoluong.setText(String.valueOf(nl.getSoluong()));
                 CboLoaiNguyenLieu.setSelectedItem(nl.getMaloainguyenlieu());
             }
         }
@@ -931,7 +931,7 @@ public class ThemMoi extends javax.swing.JFrame {
         NguyenLieu nl = new NguyenLieu();
         nl.setManguyenlieu(txtmanguyenlieu.getText());
         nl.setTenNguyenLieu(txttennguyenlieu.getText());
-        nl.setSoluong(txtsoluong.getText());
+        nl.setSoluong(Double.valueOf(txtsoluong.getText()));
         nl.setDonvitinh(txtdonvitinh.getText());
         nl.setMaloainguyenlieu((String) CboLoaiNguyenLieu.getSelectedItem());
         return nl;

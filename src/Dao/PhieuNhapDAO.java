@@ -21,23 +21,23 @@ public class PhieuNhapDAO extends MainDAO<PhieuNhap, String>{
     @Override
     public void insert(PhieuNhap model) {
          String sql="INSERT INTO PhieuNhap (MaPhieuNhap, MaNgLieu, MaCC, MaNV, SoLuong, DoViTinh, DonGia, NgayLapPhieu, NgayNhap) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
               model.getMaPhieuNhap(),model.getMaNgLieu(),model.getMaCC(),model.getMaNV(),model.getSoluong(),
-                model.getDoViTinh(),model.getDonGia(),model.getNgayLapPhieu(),model.getNgayNhap());
+                model.getDonViTinh(),model.getDonGia(),model.getNgayLapPhieu(),model.getNgayNhap());
     }
 
     @Override
     public void update(PhieuNhap model) {
           String sql="UPDATE PhieuNhap SET  MaNgLieu = ?, MaCC = ?, MaNV = ?, SoLuong = ?, DonViTinh = ?, DonGia =?, NgayLapPhieu = ?, NgayNhap = ?  Where MaPhieuNhap = ?";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                model.getMaNgLieu(),model.getMaCC(),model.getMaNV(),model.getSoluong(),
-                model.getDoViTinh(),model.getDonGia(),model.getNgayLapPhieu(),model.getNgayNhap(),model.getMaPhieuNhap());
+                model.getDonViTinh(),model.getDonGia(),model.getNgayLapPhieu(),model.getNgayNhap(),model.getMaPhieuNhap());
     }
 
     @Override
     public void delete(String id) {
         String sql="DELETE FROM PhieuNhap WHERE MaPhieuNhap=?;";
-        ConnectDatabase.update(sql, id);
+        ConnectDatabase.updateData(sql, id);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class PhieuNhapDAO extends MainDAO<PhieuNhap, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     PhieuNhap entity=new PhieuNhap();
                     entity.setMaPhieuNhap(rs.getString("MaPhieuNhap"));
@@ -67,9 +67,9 @@ public class PhieuNhapDAO extends MainDAO<PhieuNhap, String>{
                     entity.setMaCC(rs.getString("MaCC"));
                     entity.setSoluong(rs.getDouble("SoLuong"));
                     entity.setDonViTinh(rs.getString("DonViTInh"));
-                    entity.setDonGia(rs.getString("DonGia"));
-                    entity.setNgayLapPhieu(rs.getString("NgayLapPhieu"));
-                    entity.setNgayNhap(rs.getString("NgayNhap"));
+                    entity.setDonGia(rs.getDouble("DonGia"));
+                    entity.setNgayLapPhieu(rs.getDate("NgayLapPhieu"));
+                    entity.setNgayNhap(rs.getDate("NgayNhap"));
                     list.add(entity);
                 }
             } 

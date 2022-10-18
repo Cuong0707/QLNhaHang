@@ -21,21 +21,21 @@ public class CaTrucDAO extends MainDAO<CaTruc, String> {
     @Override
     public void insert(CaTruc model) {
         String sql="INSERT INTO CaTruc (MaCaTruc,GioBatDau,GioKetCa) VALUES (?, ?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMacaTruc(),model.getGiobatdau(),model.getGioketca());
     }
 
     @Override
     public void update(CaTruc model) {
                 String sql="UPDATE CaTruc SET GioBatDau = ?, GioKetCa =? WHERE MaCaTruc =  ?;";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getGiobatdau(),model.getGioketca(), model.getMacaTruc() );
     }
 
     @Override
     public void delete(String id) {
            String sql="DELETE FROM CaTruc WHERE MaCaTruc = ?;";
-        ConnectDatabase.update(sql, id);
+        ConnectDatabase.updateData(sql, id);
     }
 
     @Override
@@ -57,12 +57,12 @@ public class CaTrucDAO extends MainDAO<CaTruc, String> {
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     CaTruc entity=new CaTruc();
                     entity.setMacaTruc(rs.getString("MacaTruc"));
-                    entity.setGiobatdau(rs.getString("Giobatdau"));    
-                    entity.setGioketca(rs.getString("Gioketca"));                 
+                    entity.setGiobatdau(rs.getTime("Giobatdau"));    
+                    entity.setGioketca(rs.getTime("Gioketca"));                 
                     list.add(entity);
                 }
             } 

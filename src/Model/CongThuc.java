@@ -12,7 +12,17 @@ public class CongThuc {
     String MaMon;
     String  MaNguyenLieu;
     String DonviTinh;
-    String soluong;
+    double soluong;
+
+    public CongThuc() {
+    }
+
+    public CongThuc(String MaMon, String MaNguyenLieu, String DonviTinh, double soluong) {
+        this.MaMon = MaMon;
+        this.MaNguyenLieu = MaNguyenLieu;
+        this.DonviTinh = DonviTinh;
+        this.soluong = soluong;
+    }
 
     public String getMaMon() {
         return MaMon;
@@ -38,11 +48,11 @@ public class CongThuc {
         this.DonviTinh = DonviTinh;
     }
 
-    public String getSoluong() {
+    public double getSoluong() {
         return soluong;
     }
 
-    public void setSoluong(String soluong) {
+    public void setSoluong(double soluong) {
         this.soluong = soluong;
     }
 }

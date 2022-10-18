@@ -4,16 +4,29 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author admin
  */
 public class HoaDon {
     private String MaHoaDon;
-    private String NgayLapHD;
+    private Date NgayLapHD;
     private String HinhThucTT;
     private String MaNV;
     private String MaKH;
+
+    public HoaDon() {
+    }
+
+    public HoaDon(String MaHoaDon, Date NgayLapHD, String HinhThucTT, String MaNV, String MaKH) {
+        this.MaHoaDon = MaHoaDon;
+        this.NgayLapHD = NgayLapHD;
+        this.HinhThucTT = HinhThucTT;
+        this.MaNV = MaNV;
+        this.MaKH = MaKH;
+    }
 
     public String getMaHoaDon() {
         return MaHoaDon;
@@ -23,11 +36,11 @@ public class HoaDon {
         this.MaHoaDon = MaHoaDon;
     }
 
-    public String getNgayLapHD() {
+    public Date getNgayLapHD() {
         return NgayLapHD;
     }
 
-    public void setNgayLapHD(String NgayLapHD) {
+    public void setNgayLapHD(Date NgayLapHD) {
         this.NgayLapHD = NgayLapHD;
     }
 

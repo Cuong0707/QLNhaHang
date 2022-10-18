@@ -4,6 +4,8 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author HP
@@ -15,9 +17,26 @@ public class PhieuNhap {
     String MaNV;
     double Soluong;
     String DonViTinh;
-    String DonGia;
-    String NgayLapPhieu;
-    String NgayNhap;
+    double DonGia;
+    Date NgayLapPhieu;
+    Date NgayNhap;
+
+    public PhieuNhap() {
+    }
+
+    public PhieuNhap(String MaPhieuNhap, String MaNgLieu, String MaCC, String MaNV, double Soluong, String DonViTinh, double DonGia, Date NgayLapPhieu, Date NgayNhap) {
+        this.MaPhieuNhap = MaPhieuNhap;
+        this.MaNgLieu = MaNgLieu;
+        this.MaCC = MaCC;
+        this.MaNV = MaNV;
+        this.Soluong = Soluong;
+        this.DonViTinh = DonViTinh;
+        this.DonGia = DonGia;
+        this.NgayLapPhieu = NgayLapPhieu;
+        this.NgayNhap = NgayNhap;
+    }
+
+  
 
     public String getMaPhieuNhap() {
         return MaPhieuNhap;
@@ -59,36 +78,37 @@ public class PhieuNhap {
         this.Soluong = Soluong;
     }
 
-    public String getDoViTinh() {
+    public String getDonViTinh() {
         return DonViTinh;
     }
 
-    public void setDonViTinh(String DoViTinh) {
-        this.DonViTinh = DoViTinh;
+    public void setDonViTinh(String DonViTinh) {
+        this.DonViTinh = DonViTinh;
     }
 
-    public String getDonGia() {
+    public double getDonGia() {
         return DonGia;
     }
 
-    public void setDonGia(String DonGia) {
+    public void setDonGia(double DonGia) {
         this.DonGia = DonGia;
     }
 
-    public String getNgayLapPhieu() {
+    public Date getNgayLapPhieu() {
         return NgayLapPhieu;
     }
 
-    public void setNgayLapPhieu(String NgayLapPhieu) {
+    public void setNgayLapPhieu(Date NgayLapPhieu) {
         this.NgayLapPhieu = NgayLapPhieu;
     }
 
-    public String getNgayNhap() {
+    public Date getNgayNhap() {
         return NgayNhap;
     }
 
-    public void setNgayNhap(String NgayNhap) {
+    public void setNgayNhap(Date NgayNhap) {
         this.NgayNhap = NgayNhap;
     }
+
    
 }

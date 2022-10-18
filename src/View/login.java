@@ -285,7 +285,7 @@ public class login extends javax.swing.JFrame {
 
             level = nhanVien.getMaCv();
             if (level.equals("CV001")) {
-
+                    
                 this.dispose();
             } else {
 

@@ -12,8 +12,19 @@ public class NguyenLieu {
     String Manguyenlieu;
     String TenNguyenLieu;
     String donvitinh;
-    String soluong;
+    double soluong;
     String Maloainguyenlieu;
+
+    public NguyenLieu(String Manguyenlieu, String TenNguyenLieu, String donvitinh, double soluong, String Maloainguyenlieu) {
+        this.Manguyenlieu = Manguyenlieu;
+        this.TenNguyenLieu = TenNguyenLieu;
+        this.donvitinh = donvitinh;
+        this.soluong = soluong;
+        this.Maloainguyenlieu = Maloainguyenlieu;
+    }
+
+    public NguyenLieu() {
+    }
 
     public String getManguyenlieu() {
         return Manguyenlieu;
@@ -39,11 +50,11 @@ public class NguyenLieu {
         this.donvitinh = donvitinh;
     }
 
-    public String getSoluong() {
+    public double getSoluong() {
         return soluong;
     }
 
-    public void setSoluong(String soluong) {
+    public void setSoluong(double soluong) {
         this.soluong = soluong;
     }
 

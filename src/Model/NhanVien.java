@@ -11,6 +11,21 @@ public class NhanVien {
     private double luong;
     private String matKhau;
 
+    public NhanVien() {
+    }
+
+    public NhanVien(String maNV, String hoTen, boolean gioiTinh, String sDt, String diaChi, String maCv, String maCatruc, double luong, String matKhau) {
+        this.maNV = maNV;
+        this.hoTen = hoTen;
+        this.gioiTinh = gioiTinh;
+        this.sDt = sDt;
+        this.diaChi = diaChi;
+        this.maCv = maCv;
+        this.maCatruc = maCatruc;
+        this.luong = luong;
+        this.matKhau = matKhau;
+    }
+
     @Override
     public String toString() {
         return this.hoTen;

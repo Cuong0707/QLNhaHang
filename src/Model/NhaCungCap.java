@@ -14,6 +14,16 @@ public class NhaCungCap {
     String SoDT;
     String DiaChi;
 
+    public NhaCungCap() {
+    }
+
+    public NhaCungCap(String MaCC, String TenCC, String SoDT, String DiaChi) {
+        this.MaCC = MaCC;
+        this.TenCC = TenCC;
+        this.SoDT = SoDT;
+        this.DiaChi = DiaChi;
+    }
+
     public String getMaCC() {
         return MaCC;
     }

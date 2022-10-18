@@ -21,7 +21,7 @@ public class NhaCungCapDAO extends MainDAO<NhaCungCap, String>{
     @Override
     public void insert(NhaCungCap model) {
      String sql="INSERT INTO NhaCungCap (MaCC, TenCC, SoDT, DiaChi) VALUES (?, ?, ?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMaCC(),model.getTenCC(),model.getSoDT(),model.getDiaChi());
                 
     
@@ -30,14 +30,14 @@ public class NhaCungCapDAO extends MainDAO<NhaCungCap, String>{
     @Override
     public void update(NhaCungCap model) {
        String sql="UPDATE NhaCungCap SET TenCC = ?, SoDT = ?, DiaChi = ?  WHERE MaCC = ?";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
       model.getTenCC(),model.getSoDT(),model.getDiaChi(),model.getMaCC());
     }
 
     @Override
     public void delete(String id) {
        String sql = "DELETE FROM NhaCungCap WHERE MaCC=?";
-        ConnectDatabase.update(sql, id);
+        ConnectDatabase.updateData(sql, id);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class NhaCungCapDAO extends MainDAO<NhaCungCap, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while (rs.next()) {
                     NhaCungCap entity = new NhaCungCap();
                     entity.setMaCC(rs.getString("MaCC"));

@@ -21,7 +21,7 @@ public class HoaDonCTDAO extends MainDAO<HoaDonCT, String>{
     @Override
     public void insert(HoaDonCT model) {
         String sql="INSERT INTO HoaDonCT (MaHoaDonCT, MaHoaDon, MaMon, SoLuong, DoViTinh) VALUES (?, ?, ?, ?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMaHoaDonCT(),model.getMaMon(),model.getMaMon(),model.getSoLuong(),model.getDonViTinh());
       
     }
@@ -29,7 +29,7 @@ public class HoaDonCTDAO extends MainDAO<HoaDonCT, String>{
     @Override
     public void update(HoaDonCT model) {
         String sql = "UPDATE HoaDonCT SET MaHoaDon= ?, MaMon = ?, SoLuong = ?, DonViTinh = ? WHERE MaHoaDonCT = ?";
-        ConnectDatabase.update(sql,
+        ConnectDatabase.updateData(sql,
                model.getMaMon(),model.getMaMon(),model.getSoLuong(),model.getDonViTinh(),model.getMaHoaDonCT());
    
     }
@@ -37,7 +37,7 @@ public class HoaDonCTDAO extends MainDAO<HoaDonCT, String>{
     @Override
     public void delete(String id) {
          String sql="DELETE FROM HoaDonCT WHERE MaHoaDonCT=? ";
-        ConnectDatabase.update(sql, id);
+        ConnectDatabase.updateData(sql, id);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class HoaDonCTDAO extends MainDAO<HoaDonCT, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     HoaDonCT entity = new HoaDonCT();
                     entity.setMaHoaDonCT(rs.getString("MaHoaDonCT"));

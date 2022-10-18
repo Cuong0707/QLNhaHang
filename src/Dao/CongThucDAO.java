@@ -21,7 +21,7 @@ public class CongThucDAO extends  MainDAO<CongThuc, String>{
     @Override
     public void insert(CongThuc model) {
        String sql="INSERT INTO CongThuc (MaMon,MaNgLieu, DonViTinh, SoLuong) VALUES (?, ?, ?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMaMon(),model.getMaNguyenLieu(),model.getDonviTinh(),model.getSoluong());
                  
     }
@@ -29,14 +29,14 @@ public class CongThucDAO extends  MainDAO<CongThuc, String>{
     @Override
     public void update(CongThuc model) {
        String sql = "UPDATE CongThuc SET MaNgLieu = ?, DonViTinh = ?, SoLuong = ? WHERE MaMon = ?";
-        ConnectDatabase.update(sql,
+        ConnectDatabase.updateData(sql,
                model.getMaNguyenLieu(),model.getDonviTinh(),model.getSoluong(),model.getMaMon());
     }
 
     @Override
     public void delete(String id) {
         String sql="DELETE FROM CongThuc WHERE MaMon=?";
-        ConnectDatabase.update(sql, id);
+        ConnectDatabase.updateData(sql, id);
     }
 
     @Override
@@ -58,13 +58,13 @@ public class CongThucDAO extends  MainDAO<CongThuc, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while (rs.next()) {
                     CongThuc entity = new CongThuc();
                     entity.setMaMon(rs.getString("MaMon"));
                     entity.setMaNguyenLieu(rs.getString("MaNgLieu"));
                     entity.setDonviTinh(rs.getString("DonViTinh"));
-                    entity.setSoluong(rs.getString("SoLuong"));                    
+                    entity.setSoluong(rs.getDouble("SoLuong"));                    
                     list.add(entity);
                 }
             } finally {

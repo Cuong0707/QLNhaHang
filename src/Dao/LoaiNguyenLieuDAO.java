@@ -22,21 +22,21 @@ public class LoaiNguyenLieuDAO extends  MainDAO<LoaiNgLieu, String>{
     @Override
     public void insert(LoaiNgLieu model) {
         String sql="INSERT INTO LoaiNgLieu (MaLoaiNgLieu,TenLoaiNgLieu) VALUES (?, ?);";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMaLoaiNguyenLieu(),model.getTenLoaiNgLieu());
     }
 
     @Override
     public void update(LoaiNgLieu model) {
             String sql = "UPDATE LoaiNgLieu SET TenNgLieu = ?  WHERE MaLoaiNgLieu =  ?;";
-        ConnectDatabase.update(sql,
+        ConnectDatabase.updateData(sql,
                model.getTenLoaiNgLieu(),model.getMaLoaiNguyenLieu());
     }
 
     @Override
     public void delete(String id) {
      String sql="DELETE FROM LoaiNgLieu Where MaLoaiNgLieu = ?;";
-        ConnectDatabase.update(sql, id); 
+        ConnectDatabase.updateData(sql, id); 
     }
 
     @Override
@@ -58,7 +58,7 @@ public class LoaiNguyenLieuDAO extends  MainDAO<LoaiNgLieu, String>{
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     LoaiNgLieu entity=new LoaiNgLieu();
                     entity.setMaLoaiNguyenLieu(rs.getString("MaLoaiNgLieu"));

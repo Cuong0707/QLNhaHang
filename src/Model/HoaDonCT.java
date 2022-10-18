@@ -15,6 +15,17 @@ public class HoaDonCT {
     double SoLuong;
     String DonViTinh;
 
+    public HoaDonCT() {
+    }
+
+    public HoaDonCT(String MaHoaDonCT, String MaHoaDon, String MaMon, double SoLuong, String DonViTinh) {
+        this.MaHoaDonCT = MaHoaDonCT;
+        this.MaHoaDon = MaHoaDon;
+        this.MaMon = MaMon;
+        this.SoLuong = SoLuong;
+        this.DonViTinh = DonViTinh;
+    }
+
     public String getMaHoaDonCT() {
         return MaHoaDonCT;
     }

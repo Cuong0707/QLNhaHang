@@ -12,6 +12,14 @@ public class LoaiNgLieu {
     String MaLoaiNgLieu ;
     String tenLoaiNgLieu ;
 
+    public LoaiNgLieu() {
+    }
+
+    public LoaiNgLieu(String MaLoaiNgLieu, String tenLoaiNgLieu) {
+        this.MaLoaiNgLieu = MaLoaiNgLieu;
+        this.tenLoaiNgLieu = tenLoaiNgLieu;
+    }
+
     public String getMaLoaiNguyenLieu() {
         return MaLoaiNgLieu;
     }

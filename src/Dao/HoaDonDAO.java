@@ -21,21 +21,21 @@ public class HoaDonDAO extends MainDAO<HoaDon, String> {
     @Override
     public void insert(HoaDon model) {
            String sql="INSERT INTO HoaDon (MaHoaDon,NgayLapHD, HinhThucTT, MaNV, MaKH) VALUES (?, ?, ?, ?, ?)";
-        ConnectDatabase.update(sql, 
+        ConnectDatabase.updateData(sql, 
                 model.getMaHoaDon(),model.getNgayLapHD(),model.getHinhThucTT(),model.getMaNV(),model.getMaKH());
       }
 
     @Override
     public void update(HoaDon Model) {
         String sql = "UPDATE HoaDon SET NgayLapHD = ?, HinhThucTT = ?, MaNV = ?, MaKH = ? WHERE MaHoaDon = ?";
-        ConnectDatabase.update(sql,
+        ConnectDatabase.updateData(sql,
                Model.getNgayLapHD(),Model.getHinhThucTT(),Model.getMaNV(),Model.getMaKH(),Model.getMaHoaDon());
     }
 
     @Override
     public void delete(String id) {
         String sql="DELETE FROM HoaDon WHERE MaHoaDon=? ";
-        ConnectDatabase.update(sql, id); 
+        ConnectDatabase.updateData(sql, id); 
     }
 
     @Override
@@ -57,11 +57,11 @@ public class HoaDonDAO extends MainDAO<HoaDon, String> {
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while(rs.next()){
                     HoaDon entity = new HoaDon();
                     entity.setMaHoaDon(rs.getString("MaHoaDon"));
-                    entity.setNgayLapHD(rs.getString("NgayLapHD")); 
+                    entity.setNgayLapHD(rs.getDate("NgayLapHD")); 
                     entity.setHinhThucTT(rs.getString("HinhThucTT"));
                     entity.setMaNV(rs.getString("MaNV"));
                     entity.setMaKH(rs.getString("MaKH")); 

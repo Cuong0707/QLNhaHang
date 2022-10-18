@@ -12,6 +12,14 @@ public class LoaiMon {
     String MaLoaiMon;
     String TenLoaiMon;
 
+    public LoaiMon() {
+    }
+
+    public LoaiMon(String MaLoaiMon, String TenLoaiMon) {
+        this.MaLoaiMon = MaLoaiMon;
+        this.TenLoaiMon = TenLoaiMon;
+    }
+
     public String getMaLoaiMon() {
         return MaLoaiMon;
     }

@@ -21,7 +21,7 @@ public class NguyenlieuDAO extends MainDAO<NguyenLieu, String> {
     @Override
     public void insert(NguyenLieu model) {
         String sql = "INSERT INTO NguyenLieu (MaNgLieu, TenNgLieu, DonViTinh, SoLuong, MaLoaiNgLieu) VALUES (?, ?, ?, ?,?)";
-        ConnectDatabase.update(sql,
+        ConnectDatabase.updateData(sql,
                 model.getManguyenlieu(), model.getTenNguyenLieu(),
                 model.getDonvitinh(), model.getSoluong(),
                 model.getMaloainguyenlieu());
@@ -30,7 +30,7 @@ public class NguyenlieuDAO extends MainDAO<NguyenLieu, String> {
     @Override
     public void update(NguyenLieu model) {
            String sql = "UPDATE NguyenLieu SET TenNgLieu = ?, DonViTinh = ?, SoLuong = ?, MaLoaiNgLieu = ? WHERE MaNgLieu = ?";
-        ConnectDatabase.update(sql,
+        ConnectDatabase.updateData(sql,
                  model.getTenNguyenLieu(),
                 model.getDonvitinh(), model.getSoluong(),
                 model.getMaloainguyenlieu(), model.getManguyenlieu());
@@ -39,7 +39,7 @@ public class NguyenlieuDAO extends MainDAO<NguyenLieu, String> {
     @Override
     public void delete(String MaNL) {
         String sql = "DELETE FROM NguyenLieu WHERE MaNgLieu=?";
-        ConnectDatabase.update(sql, MaNL);
+        ConnectDatabase.updateData(sql, MaNL);
     }
 
     @Override
@@ -61,13 +61,13 @@ public class NguyenlieuDAO extends MainDAO<NguyenLieu, String> {
         try {
             ResultSet rs = null;
             try {
-                rs = ConnectDatabase.query(sql, args);
+                rs = ConnectDatabase.queryData(sql, args);
                 while (rs.next()) {
                     NguyenLieu entity = new NguyenLieu();
                     entity.setManguyenlieu(rs.getString("MaNgLieu"));
                     entity.setTenNguyenLieu(rs.getString("TenNgLieu"));
                     entity.setDonvitinh(rs.getString("DonViTinh"));
-                    entity.setSoluong(rs.getString("SoLuong"));
+                    entity.setSoluong(rs.getDouble("SoLuong"));
                     entity.setMaloainguyenlieu(rs.getString("MaLoaiNgLieu"));
                     list.add(entity);
                 }
