@@ -4,7 +4,9 @@
  */
 package Model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -109,6 +111,19 @@ public class PhieuNhap {
     public void setNgayNhap(Date NgayNhap) {
         this.NgayNhap = NgayNhap;
     }
-
+    public List<String> getEntity()
+    {
+        List<String> list = new ArrayList<>();
+        list.add("MaPhieuNhap");
+        list.add("MaNgLieu");
+        list.add("DonGia");
+        list.add("DonViTinh");
+        list.add("SoLuong");
+        list.add("NgayLapPhieu");
+        list.add("NgayNhap");
+        list.add("MaCC");
+        list.add("NguoiNhap");
+        return list;
+    }
    
 }

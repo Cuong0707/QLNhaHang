@@ -78,6 +78,12 @@ public class HoaDonDAO extends MainDAO<HoaDon, String> {
         }
         return list;
     }
+
+    public List<HoaDon> selectAllbyentity(String entity,String a){
+        String sql="SELECT * FROM HoaDon ORDER BY "+entity+" "+a;
+        List<HoaDon> list = this.selectBySql(sql);
+        return list;
+    }
     }
         
         

@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NhanVien {
     private String maNV;
     private String hoTen;
@@ -101,6 +104,20 @@ public class NhanVien {
 
     public void setMatKhau(String matKhau) {
         this.matKhau = matKhau;
+    }
+    public List<String> getEntity()
+    {
+        List<String> list = new ArrayList<>();
+        list.add("MaNv");
+        list.add("HoTenNV");
+        list.add("GioiTinh");
+        list.add("SoDt");
+        list.add("Diachi");
+        list.add("MaCV");
+        list.add("MaCaTruc");
+        list.add("Luong");
+        list.add("MatKhau");
+        return list;
     }
 
 }

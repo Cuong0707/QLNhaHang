@@ -77,4 +77,9 @@ public class NhanVienDAO extends MainDAO<NhanVien, String>{
         }
         return list;
     }
+    public List<NhanVien> selectAllbyentity(String entity,String a){
+        String sql="SELECT * FROM NhanVien ORDER BY "+entity+" "+a;
+        List<NhanVien> list = this.selectBySql(sql);
+        return list;
+    }
 }

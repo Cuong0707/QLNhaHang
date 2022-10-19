@@ -83,5 +83,12 @@ public class PhieuNhapDAO extends MainDAO<PhieuNhap, String>{
         }
         return list;
     }
+
+    @Override
+    public List<PhieuNhap> selectAllbyentity(String entity,String a){
+        String sql="SELECT * FROM PhieuNhap ORDER BY "+entity+" "+a;
+        List<PhieuNhap> list = this.selectBySql(sql);
+        return list;
+    }
     
 }
