@@ -56,8 +56,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="txtmatkhaumoi" linkSize="3" alignment="0" pref="168" max="32767" attributes="0"/>
-                              <Component id="txtmatkhau" linkSize="3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtMatKhauMoi" linkSize="3" alignment="0" pref="168" max="32767" attributes="0"/>
+                              <Component id="txtMatKhau" linkSize="3" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtMaNV" linkSize="3" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -71,7 +71,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btncancel" linkSize="5" min="-2" pref="78" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="txtmatkhaumoi2" linkSize="3" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="txtXacNhan" linkSize="3" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -92,17 +92,17 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtmatkhau" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtMatKhau" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtmatkhaumoi" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtMatKhauMoi" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtmatkhaumoi2" linkSize="4" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="txtXacNhan" linkSize="4" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -196,19 +196,19 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncancelActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="txtmatkhau">
+        <Component class="javax.swing.JPasswordField" name="txtMatKhau">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtmatkhauActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMatKhauActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="txtmatkhaumoi">
+        <Component class="javax.swing.JPasswordField" name="txtMatKhauMoi">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtmatkhaumoiActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMatKhauMoiActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="txtmatkhaumoi2">
+        <Component class="javax.swing.JPasswordField" name="txtXacNhan">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtmatkhaumoi2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtXacNhanActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

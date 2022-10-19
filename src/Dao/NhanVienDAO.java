@@ -42,7 +42,11 @@ public class NhanVienDAO extends MainDAO<NhanVien, String>{
         List<NhanVien> list = this.selectBySql(sql, manv);
         return list.size() > 0 ? list.get(0) : null;
     }
-    
+  public NhanVien selectByup(String manv , String mamk){
+        String sql="SELECT * FROM NhanVien WHERE MaNV=? and MatKhau=? ";
+        List<NhanVien> list = this.selectBySql(sql, manv,mamk);
+        return list.size() > 0 ? list.get(0) : null;
+    }  
     protected List<NhanVien> selectBySql(String sql, Object...args){
         List<NhanVien> list=new ArrayList<>();
         try {

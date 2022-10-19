@@ -42,9 +42,9 @@ public class DoiMatKhau extends javax.swing.JFrame {
         txtMaNV = new javax.swing.JTextField();
         btndoimatkhau = new javax.swing.JButton();
         btncancel = new javax.swing.JButton();
-        txtmatkhau = new javax.swing.JPasswordField();
-        txtmatkhaumoi = new javax.swing.JPasswordField();
-        txtmatkhaumoi2 = new javax.swing.JPasswordField();
+        txtMatKhau = new javax.swing.JPasswordField();
+        txtMatKhauMoi = new javax.swing.JPasswordField();
+        txtXacNhan = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,21 +87,21 @@ public class DoiMatKhau extends javax.swing.JFrame {
             }
         });
 
-        txtmatkhau.addActionListener(new java.awt.event.ActionListener() {
+        txtMatKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtmatkhauActionPerformed(evt);
+                txtMatKhauActionPerformed(evt);
             }
         });
 
-        txtmatkhaumoi.addActionListener(new java.awt.event.ActionListener() {
+        txtMatKhauMoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtmatkhaumoiActionPerformed(evt);
+                txtMatKhauMoiActionPerformed(evt);
             }
         });
 
-        txtmatkhaumoi2.addActionListener(new java.awt.event.ActionListener() {
+        txtXacNhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtmatkhaumoi2ActionPerformed(evt);
+                txtXacNhanActionPerformed(evt);
             }
         });
 
@@ -118,8 +118,8 @@ public class DoiMatKhau extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(43, 43, 43)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtmatkhaumoi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(txtmatkhau, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMatKhauMoi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(txtMatKhau, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtMaNV)))
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -130,12 +130,12 @@ public class DoiMatKhau extends javax.swing.JFrame {
                                 .addComponent(btndoimatkhau)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btncancel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtmatkhaumoi2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtXacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(25, Short.MAX_VALUE))
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtMaNV, txtmatkhau, txtmatkhaumoi, txtmatkhaumoi2});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtMaNV, txtMatKhau, txtMatKhauMoi, txtXacNhan});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btncancel, btndoimatkhau});
 
@@ -150,15 +150,15 @@ public class DoiMatKhau extends javax.swing.JFrame {
                     .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtmatkhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtmatkhaumoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtmatkhaumoi2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtXacNhan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -169,7 +169,7 @@ public class DoiMatKhau extends javax.swing.JFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btncancel, btndoimatkhau});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtMaNV, txtmatkhau, txtmatkhaumoi, txtmatkhaumoi2});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtMaNV, txtMatKhau, txtMatKhauMoi, txtXacNhan});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,17 +187,17 @@ public class DoiMatKhau extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtmatkhaumoi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmatkhaumoi2ActionPerformed
+    private void txtXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtXacNhanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtmatkhaumoi2ActionPerformed
+    }//GEN-LAST:event_txtXacNhanActionPerformed
 
-    private void txtmatkhaumoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmatkhaumoiActionPerformed
+    private void txtMatKhauMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatKhauMoiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtmatkhaumoiActionPerformed
+    }//GEN-LAST:event_txtMatKhauMoiActionPerformed
 
-    private void txtmatkhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmatkhauActionPerformed
+    private void txtMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatKhauActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtmatkhauActionPerformed
+    }//GEN-LAST:event_txtMatKhauActionPerformed
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         login b1 = new login();
@@ -271,30 +271,33 @@ public class DoiMatKhau extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtMaNV;
-    private javax.swing.JPasswordField txtmatkhau;
-    private javax.swing.JPasswordField txtmatkhaumoi;
-    private javax.swing.JPasswordField txtmatkhaumoi2;
+    private javax.swing.JPasswordField txtMatKhau;
+    private javax.swing.JPasswordField txtMatKhauMoi;
+    private javax.swing.JPasswordField txtXacNhan;
     // End of variables declaration//GEN-END:variables
 
-    NhanVienDAO dao = new NhanVienDAO();
+   NhanVienDAO dao = new NhanVienDAO();
+    NhanVien model = new NhanVien();
 
     private void doiMatKhau() {
         String manv = txtMaNV.getText();
-        String matKhau = new String(txtmatkhau.getPassword());
-        String matKhauMoi = new String(txtmatkhaumoi.getPassword());
-        String matKhauMoi2 = new String(txtmatkhaumoi2.getPassword());
-        NhanVien nv = new NhanVien();
-        if (!manv.equalsIgnoreCase(nv.getMaNV())) {
-            MsgBox.alert(this, "Sai tên đăng nhập!");
-        } else if (!matKhau.equals(nv.getMatKhau())) {
-            MsgBox.alert(this, "Sai mật khẩu!");
-        } else if (!matKhauMoi.equals(matKhauMoi2)) {
-            MsgBox.alert(this, "Xác nhận mật khẩu không đúng!");
-        } else {
-            Auth.user.setMatKhau(matKhauMoi);
-            dao.update(Auth.user);
-            MsgBox.alert(this, "Đổi mật khẩu thành công!");
-        }
+        String matKhau = new String(txtMatKhau.getPassword());
+        String matKhauMoi = new String(txtMatKhauMoi.getPassword());
+        String matKhauMoi2 = new String(txtXacNhan.getPassword());
 
+        if (manv == null) {
+            JOptionPane.showMessageDialog(this, "Tài Khoản không tồn tại");
+        } else if (matKhau == null) {
+            JOptionPane.showMessageDialog(this, "Mật Khẩu không tồn tại");
+        } else if (matKhauMoi.equals(matKhauMoi2)) {
+            NhanVien nv = dao.selectByup(manv, matKhau);
+            if (nv.getMatKhau().equals(matKhau) && nv.getMaNV().equals(manv)) {
+                nv.setMatKhau(matKhauMoi2);
+                dao.update(nv);
+                JOptionPane.showMessageDialog(this, "Đổi Mật khẩu thành công");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "mật khẩu mới");
+        }
     }
 }
