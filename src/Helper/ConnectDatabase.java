@@ -28,7 +28,6 @@ public class ConnectDatabase {
 
         try {
             connect = (Connection) DriverManager.getConnection(db_url, user, pass);
-            System.out.println("Kết nối thành công!");
         } catch (SQLException ex) {
             System.out.println("Lỗi kết nối: " + ex);
         }

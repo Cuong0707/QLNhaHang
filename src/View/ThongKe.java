@@ -523,6 +523,18 @@ public class ThongKe extends javax.swing.JFrame {
         {
             selectByid(tblPhieunhap);
         }
+        else if(pnlCatruc.isShowing())
+        {
+            selectByid(tblCaTruc);
+        }
+        else if(pnlKhachhang.isShowing())
+        {
+            selectByid(tblKhachhang);
+        }
+        else if(pnlNguyenlieu.isShowing())
+        {
+            selectByid(tblNguyenLieu);
+        }
        
     }//GEN-LAST:event_txtTimkiemActionPerformed
 
@@ -567,6 +579,18 @@ public class ThongKe extends javax.swing.JFrame {
         {
             this.showTablephieunhap();
         }
+        else if(pnlCatruc.isShowing())
+        {
+            this.showTablencatruc();
+        }
+        else if(pnlKhachhang.isShowing())
+        {
+            this.showTablenkhachhang();
+        }
+        else if(pnlNguyenlieu.isShowing())
+        {
+            this.showTablenguyenlieu();
+        }
     }//GEN-LAST:event_cboSapxeptheoItemStateChanged
 
     private void btnXemchitietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXemchitietActionPerformed
@@ -578,6 +602,26 @@ public class ThongKe extends javax.swing.JFrame {
         else if(pnlHoadon.isShowing())
         {
             DefaultTableModel model = (DefaultTableModel) tblHoadon.getModel();
+            OutputExcel out = new OutputExcel("HoaDon", model);
+        }
+        else if(pnlPhieunhap.isShowing())
+        {
+            DefaultTableModel model = (DefaultTableModel) tblNguyenLieu.getModel();
+            OutputExcel out = new OutputExcel("NguyenLieu", model);
+        }
+        else if(pnlCatruc.isShowing())
+        {
+            DefaultTableModel model = (DefaultTableModel) tblCaTruc.getModel();
+            OutputExcel out = new OutputExcel("CaTruc", model);
+        }
+        else if(pnlKhachhang.isShowing())
+        {
+            DefaultTableModel model = (DefaultTableModel) tblKhachhang.getModel();
+            OutputExcel out = new OutputExcel("Khachhang", model);
+        }
+        else if(pnlNguyenlieu.isShowing())
+        {
+            DefaultTableModel model = (DefaultTableModel) tblNguyenLieu.getModel();
             OutputExcel out = new OutputExcel("HoaDon", model);
         }
     }//GEN-LAST:event_btnXemchitietActionPerformed
