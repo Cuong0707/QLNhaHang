@@ -77,6 +77,13 @@ public class KhachHangDAO extends MainDAO<KhachHang, String>{
         }
         return list;
     }
+
+    @Override
+    public List<KhachHang> selectAllbyentity(String entity, String a) {
+        String sql="SELECT * FROM khachhang ORDER BY "+entity+" "+a;
+        List<KhachHang> list = this.selectBySql(sql);
+        return list;
+    }
     
     }
     

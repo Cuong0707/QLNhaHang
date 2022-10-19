@@ -1,10 +1,16 @@
 package View;
 
 
+import Dao.CaTrucDAO;
 import Dao.HoaDonDAO;
+import Dao.KhachHangDAO;
+import Dao.NguyenlieuDAO;
 import Dao.NhanVienDAO;
 import Dao.PhieuNhapDAO;
 import Helper.OutputExcel;
+import Model.CaTruc;
+import Model.KhachHang;
+import Model.NguyenLieu;
 import Model.NhanVien;
 import Model.PhieuNhap;
 import java.awt.Color;
@@ -27,9 +33,7 @@ public class ThongKe extends javax.swing.JFrame {
         WatterMake(txtTimkiem,"Tim Kiem");
         this.setLocationRelativeTo(null);
         mnThongke.setForeground(Color.red);
-        this.showtableNhanvien();
-        this.showtableHoaDon();
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -198,7 +202,7 @@ public class ThongKe extends javax.swing.JFrame {
             }
         });
 
-        pnlNhanvien.setBackground(new java.awt.Color(255, 220, 126));
+        pnlNhanvien.setBackground(new java.awt.Color(255, 255, 204));
         pnlNhanvien.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 pnlNhanvienComponentShown(evt);
@@ -255,7 +259,7 @@ public class ThongKe extends javax.swing.JFrame {
 
         tabpnlQuanLy.addTab("Nhân Viên", pnlNhanvien);
 
-        pnlHoadon.setBackground(new java.awt.Color(255, 220, 126));
+        pnlHoadon.setBackground(new java.awt.Color(255, 255, 204));
         pnlHoadon.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 pnlHoadonComponentShown(evt);
@@ -294,7 +298,12 @@ public class ThongKe extends javax.swing.JFrame {
 
         tabpnlQuanLy.addTab("Hóa Đơn", pnlHoadon);
 
-        pnlPhieunhap.setBackground(new java.awt.Color(255, 220, 126));
+        pnlPhieunhap.setBackground(new java.awt.Color(255, 255, 204));
+        pnlPhieunhap.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlPhieunhapComponentShown(evt);
+            }
+        });
 
         tblPhieunhap.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -328,7 +337,12 @@ public class ThongKe extends javax.swing.JFrame {
 
         tabpnlQuanLy.addTab("Phiếu Nhập", pnlPhieunhap);
 
-        pnlNguyenlieu.setBackground(new java.awt.Color(255, 220, 126));
+        pnlNguyenlieu.setBackground(new java.awt.Color(255, 255, 204));
+        pnlNguyenlieu.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlNguyenlieuComponentShown(evt);
+            }
+        });
 
         tblNguyenLieu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -362,7 +376,12 @@ public class ThongKe extends javax.swing.JFrame {
 
         tabpnlQuanLy.addTab("Nguyên Liệu", pnlNguyenlieu);
 
-        pnlKhachhang.setBackground(new java.awt.Color(255, 220, 126));
+        pnlKhachhang.setBackground(new java.awt.Color(255, 255, 204));
+        pnlKhachhang.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlKhachhangComponentShown(evt);
+            }
+        });
 
         tblKhachhang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -396,7 +415,12 @@ public class ThongKe extends javax.swing.JFrame {
 
         tabpnlQuanLy.addTab("Khách Hàng", pnlKhachhang);
 
-        pnlCatruc.setBackground(new java.awt.Color(255, 220, 126));
+        pnlCatruc.setBackground(new java.awt.Color(255, 255, 204));
+        pnlCatruc.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlCatrucComponentShown(evt);
+            }
+        });
 
         tblCaTruc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -448,7 +472,6 @@ public class ThongKe extends javax.swing.JFrame {
         mnThongke.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuBar1.add(mnThongke);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Button-exit-icon.png"))); // NOI18N
         jMenu2.setText("Thoát");
         jMenuBar1.add(jMenu2);
 
@@ -500,6 +523,7 @@ public class ThongKe extends javax.swing.JFrame {
         {
             selectByid(tblPhieunhap);
         }
+       
     }//GEN-LAST:event_txtTimkiemActionPerformed
 
     private void cboChoncotItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboChoncotItemStateChanged
@@ -515,6 +539,19 @@ public class ThongKe extends javax.swing.JFrame {
         {
             this.showTablephieunhap();
         }
+        else if(pnlCatruc.isShowing())
+        {
+            this.showTablencatruc();
+        }
+        else if(pnlKhachhang.isShowing())
+        {
+            this.showTablenkhachhang();
+        }
+        else if(pnlNguyenlieu.isShowing())
+        {
+            this.showTablenguyenlieu();
+        }
+        
     }//GEN-LAST:event_cboChoncotItemStateChanged
 
     private void cboSapxeptheoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboSapxeptheoItemStateChanged
@@ -544,6 +581,22 @@ public class ThongKe extends javax.swing.JFrame {
             OutputExcel out = new OutputExcel("HoaDon", model);
         }
     }//GEN-LAST:event_btnXemchitietActionPerformed
+
+    private void pnlPhieunhapComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlPhieunhapComponentShown
+        this.showTablephieunhap();
+    }//GEN-LAST:event_pnlPhieunhapComponentShown
+
+    private void pnlNguyenlieuComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlNguyenlieuComponentShown
+        this.showTablenguyenlieu();
+    }//GEN-LAST:event_pnlNguyenlieuComponentShown
+
+    private void pnlKhachhangComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlKhachhangComponentShown
+        this.showTablenkhachhang();
+    }//GEN-LAST:event_pnlKhachhangComponentShown
+
+    private void pnlCatrucComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_pnlCatrucComponentShown
+        this.showTablencatruc();
+    }//GEN-LAST:event_pnlCatrucComponentShown
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -594,9 +647,16 @@ public class ThongKe extends javax.swing.JFrame {
     NhanVienDAO NVdao = new NhanVienDAO();
     HoaDonDAO HDdao = new HoaDonDAO();
     PhieuNhapDAO PNDAO = new PhieuNhapDAO();
+    NguyenlieuDAO NLDao = new NguyenlieuDAO();
+    KhachHangDAO KHDao = new KhachHangDAO();
+    CaTrucDAO CTDao = new CaTrucDAO();
+    
     NhanVien nhanVien = new NhanVien();
     Model.HoaDon hoaDon = new Model.HoaDon();
     PhieuNhap phieuNhap = new PhieuNhap();
+    NguyenLieu nguyenLieu = new NguyenLieu();
+    KhachHang khachHang = new KhachHang();
+    CaTruc caTruc = new CaTruc();
     
     
     private void WatterMake(JTextField searchText, String chuoi) {
@@ -777,6 +837,138 @@ public class ThongKe extends javax.swing.JFrame {
                     model.addRow(row);
                 }    
                 
+            } 
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi Truy Vấn Dữ Liệu 111!!");
+            }
+        }
+    }
+    public void showTablenguyenlieu()
+    {
+        DefaultTableModel model = (DefaultTableModel) tblNguyenLieu.getModel();
+        model.setRowCount(0);
+        if(cboChoncot.getItemCount()<1 )
+        {
+            try {
+                List<NguyenLieu> list = NLDao.selectAll();
+                for (NguyenLieu pn : list) {
+                    Object[] row = {
+                        pn.getManguyenlieu(),pn.getTenNguyenLieu()
+                    };
+                    model.addRow(row);  
+                }
+            } 
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi Truy Vấn Dữ Liệu 111!!");
+            }
+        }
+        else{
+            try {
+                String a;
+                if(cboSapxeptheo.getSelectedItem().equals("Tăng"))
+                {
+                    a = "ASC";
+                }
+                else{
+                    a= "DESC";
+                }
+
+                List<NguyenLieu> listnv = NLDao.selectAllbyentity(nguyenLieu.getEntity().get(cboChoncot.getSelectedIndex()),a);
+                for (NguyenLieu pn : listnv) {
+                    Object[] row = {
+                        pn.getManguyenlieu(),pn.getTenNguyenLieu()
+                    };
+                    model.addRow(row);   
+                    
+                }
+            } 
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi Truy Vấn Dữ Liệu 111!!");
+            }
+        }
+    }
+    public void showTablenkhachhang()
+    {
+        DefaultTableModel model = (DefaultTableModel) tblKhachhang.getModel();
+        model.setRowCount(0);
+        if(cboChoncot.getItemCount()<1 )
+        {
+            try {
+                List<KhachHang> list = KHDao.selectAll();
+                for (KhachHang pn : list) {
+                    Object[] row = {
+                        pn.getMaKH(),pn.getHoTenKH(),pn.getSoDT(),pn.getDiaChi()
+                    };
+                    model.addRow(row);  
+                }
+            } 
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi Truy Vấn Dữ Liệu 111!!");
+            }
+        }
+        else{
+            try {
+                String a;
+                if(cboSapxeptheo.getSelectedItem().equals("Tăng"))
+                {
+                    a = "ASC";
+                }
+                else{
+                    a= "DESC";
+                }
+
+                List<KhachHang> listnv = KHDao.selectAllbyentity(khachHang.getEntity().get(cboChoncot.getSelectedIndex()),a);
+                for (KhachHang pn : listnv) {
+                    Object[] row = {
+                        pn.getMaKH(),pn.getHoTenKH(),pn.getSoDT(),pn.getDiaChi()
+                    };
+                    model.addRow(row);   
+                    
+                }
+            } 
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi Truy Vấn Dữ Liệu 111!!");
+            }
+        }
+    }
+    public void showTablencatruc()
+    {
+        DefaultTableModel model = (DefaultTableModel) tblCaTruc.getModel();
+        model.setRowCount(0);
+        if(cboChoncot.getItemCount()<1 )
+        {
+            try {
+                List<CaTruc> list = CTDao.selectAll();
+                for (CaTruc pn : list) {
+                    Object[] row = {
+                        pn.getMacaTruc(),pn.getGiobatdau(),pn.getGioketca()
+                    };
+                    model.addRow(row);  
+                }
+            } 
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi Truy Vấn Dữ Liệu 111!!");
+            }
+        }
+        else{
+            try {
+                String a;
+                if(cboSapxeptheo.getSelectedItem().equals("Tăng"))
+                {
+                    a = "ASC";
+                }
+                else{
+                    a= "DESC";
+                }
+
+                List<CaTruc> listnv = CTDao.selectAllbyentity(caTruc.getEntity().get(cboChoncot.getSelectedIndex()),a);
+                for (CaTruc pn : listnv) {
+                    Object[] row = {
+                        pn.getMacaTruc(),pn.getGiobatdau(),pn.getGioketca()
+                    };
+                    model.addRow(row);   
+                    
+                }
             } 
             catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Lỗi Truy Vấn Dữ Liệu 111!!");

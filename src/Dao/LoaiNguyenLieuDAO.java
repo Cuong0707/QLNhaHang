@@ -76,6 +76,11 @@ public class LoaiNguyenLieuDAO extends  MainDAO<LoaiNgLieu, String>{
         }
         return list;
     }
+
+    @Override
+    List<LoaiNgLieu> selectAllbyentity(String entity, String a) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     }
     
 

@@ -20,7 +20,7 @@ public class NguyenlieuDAO extends MainDAO<NguyenLieu, String> {
 
     @Override
     public void insert(NguyenLieu model) {
-        String sql = "INSERT INTO NguyenLieu (MaNgLieu, TenNgLieu, DonViTinh, SoLuong, MaLoaiNgLieu) VALUES (?, ?, ?, ?,?)";
+        String sql = "INSERT INTO Nglieu (MaNgLieu, TenNgLieu, DonViTinh, SoLuong, MaLoaiNgLieu) VALUES (?, ?, ?, ?,?)";
         ConnectDatabase.updateData(sql,
                 model.getManguyenlieu(), model.getTenNguyenLieu(),
                 model.getDonvitinh(), model.getSoluong(),
@@ -29,7 +29,7 @@ public class NguyenlieuDAO extends MainDAO<NguyenLieu, String> {
 
     @Override
     public void update(NguyenLieu model) {
-           String sql = "UPDATE NguyenLieu SET TenNgLieu = ?, DonViTinh = ?, SoLuong = ?, MaLoaiNgLieu = ? WHERE MaNgLieu = ?";
+           String sql = "UPDATE Nglieu SET TenNgLieu = ?, DonViTinh = ?, SoLuong = ?, MaLoaiNgLieu = ? WHERE MaNgLieu = ?";
         ConnectDatabase.updateData(sql,
                  model.getTenNguyenLieu(),
                 model.getDonvitinh(), model.getSoluong(),
@@ -38,20 +38,20 @@ public class NguyenlieuDAO extends MainDAO<NguyenLieu, String> {
 
     @Override
     public void delete(String MaNL) {
-        String sql = "DELETE FROM NguyenLieu WHERE MaNgLieu=?";
+        String sql = "DELETE FROM Nglieu WHERE MaNgLieu=?";
         ConnectDatabase.updateData(sql, MaNL);
     }
 
     @Override
     public NguyenLieu selectById(String id) {
-      String sql="SELECT * FROM NguyenLieu WHERE MaNgLieu=?";
+      String sql="SELECT * FROM Nglieu WHERE MaNgLieu=?";
         List<NguyenLieu> list = this.selectBySql(sql, id);
         return list.size() > 0 ? list.get(0) : null;
     }
 
     @Override
     public List<NguyenLieu> selectAll() {
-        String sql="SELECT * FROM NguyenLieu";
+        String sql="SELECT * FROM Nglieu";
         return this.selectBySql(sql);
     }
 
@@ -78,6 +78,13 @@ public class NguyenlieuDAO extends MainDAO<NguyenLieu, String> {
             ex.printStackTrace();
             throw new RuntimeException(ex);
         }
+        return list;
+    }
+
+    @Override
+    public List<NguyenLieu> selectAllbyentity(String entity, String a) {
+        String sql="SELECT * FROM Nglieu ORDER BY "+entity+" "+a;
+        List<NguyenLieu> list = this.selectBySql(sql);
         return list;
     }
 }

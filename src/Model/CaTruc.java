@@ -1,6 +1,8 @@
 
 package Model;
 import java.sql.Time;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author HP
@@ -42,7 +44,14 @@ public class CaTruc {
     public void setGioketca(Time Gioketca) {
         this.Gioketca = Gioketca;
     }
-
+    public List<String> getEntity()
+    {
+        List<String> list = new ArrayList<>();
+        list.add("MaCaTruc");
+        list.add("GioDatDau");
+        list.add("GioKetCa");
+        return list;
+    }
    
    
 }

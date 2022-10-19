@@ -4,6 +4,9 @@
  */
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author HP
@@ -54,5 +57,14 @@ public class KhachHang {
 
     public void setDiaChi(String DiaChi) {
         this.DiaChi = DiaChi;
+    }
+    public List<String> getEntity()
+    {
+        List<String> list = new ArrayList<>();
+        list.add("MaKH");
+        list.add("HoTenKH");
+        list.add("SoDT");
+        list.add("DiaChi");
+        return list;
     }
 }

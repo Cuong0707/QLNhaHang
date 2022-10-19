@@ -77,5 +77,10 @@ public class LoaiMonDAO extends MainDAO<LoaiMon, String>{
         }
         return list;
     }
+
+    @Override
+    List<LoaiMon> selectAllbyentity(String entity, String a) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

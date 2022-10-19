@@ -76,6 +76,11 @@ public class CongThucDAO extends  MainDAO<CongThuc, String>{
         }
         return list;
     }
+
+    @Override
+    List<CongThuc> selectAllbyentity(String entity, String a) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     }
     
 

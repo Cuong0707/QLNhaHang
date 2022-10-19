@@ -75,6 +75,11 @@ public class ChucVuDAO extends MainDAO<ChucVu, String> {
         }
         return list;
     }
+
+    @Override
+    List<ChucVu> selectAllbyentity(String entity, String a) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
           
     
 }

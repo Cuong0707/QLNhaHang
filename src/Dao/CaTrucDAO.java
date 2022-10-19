@@ -61,8 +61,8 @@ public class CaTrucDAO extends MainDAO<CaTruc, String> {
                 while(rs.next()){
                     CaTruc entity=new CaTruc();
                     entity.setMacaTruc(rs.getString("MacaTruc"));
-                    entity.setGiobatdau(rs.getTime("Giobatdau"));    
-                    entity.setGioketca(rs.getTime("Gioketca"));                 
+                    entity.setGiobatdau(rs.getTime("GioDatDau"));    
+                    entity.setGioketca(rs.getTime("GioKetCa"));                 
                     list.add(entity);
                 }
             } 
@@ -74,6 +74,13 @@ public class CaTrucDAO extends MainDAO<CaTruc, String> {
             ex.printStackTrace();
             throw new RuntimeException(ex);
         }
+        return list;
+    }
+
+    @Override
+    public List<CaTruc> selectAllbyentity(String entity, String a) {
+        String sql="SELECT * FROM CaTruc ORDER BY "+entity+" "+a;
+        List<CaTruc> list = this.selectBySql(sql);
         return list;
     }
     

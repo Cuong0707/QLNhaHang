@@ -81,6 +81,11 @@ public class HoaDonCTDAO extends MainDAO<HoaDonCT, String>{
         }
         return list;
     }
+
+    @Override
+    List<HoaDonCT> selectAllbyentity(String entity, String a) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }

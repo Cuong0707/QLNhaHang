@@ -4,6 +4,9 @@
  */
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author HP
@@ -64,5 +67,15 @@ public class NguyenLieu {
 
     public void setMaloainguyenlieu(String Maloainguyenlieu) {
         this.Maloainguyenlieu = Maloainguyenlieu;
+    }
+    public List<String> getEntity()
+    {
+        List<String> list = new ArrayList<>();
+        list.add("MaNgLieu");
+        list.add("TenNgLieu");
+        list.add("MaLoaiNgLieu");
+        list.add("DonViTinh");
+        list.add("SoLuong");
+        return list;
     }
 }

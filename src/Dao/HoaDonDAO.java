@@ -63,7 +63,7 @@ public class HoaDonDAO extends MainDAO<HoaDon, String> {
                     entity.setMaHoaDon(rs.getString("MaHoaDon"));
                     entity.setNgayLapHD(rs.getDate("NgayLapHD")); 
                     entity.setHinhThucTT(rs.getString("HinhThucTT"));
-                    entity.setMaNV(rs.getString("MaNV"));
+                    entity.setMaNV(rs.getString(3));
                     entity.setMaKH(rs.getString("MaKH")); 
                     list.add(entity);
                 }
