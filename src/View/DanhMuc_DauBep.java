@@ -116,16 +116,16 @@ public class DanhMuc_DauBep extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("CHÀO MỪNG BẠN ĐẾN VỚI NHÀ HÀNG ĐẸP VÀ ĐỘC");
 
-        btnKhoNguyenLieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/images (1).png"))); // NOI18N
+        btnKhoNguyenLieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Kho-icon.png"))); // NOI18N
 
-        btnThucDon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Untitled (1).png"))); // NOI18N
+        btnThucDon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Menu-icon.png"))); // NOI18N
         btnThucDon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThucDonActionPerformed(evt);
             }
         });
 
-        btnHoaDon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Windows-View-Detail-icon.png"))); // NOI18N
+        btnHoaDon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/HoaDon-icon.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -139,11 +139,11 @@ public class DanhMuc_DauBep extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Hóa Đơn");
 
-        btnCaTruc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Slideshare-icon.png"))); // NOI18N
+        btnCaTruc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/CaTruc-icon.png"))); // NOI18N
 
-        btnCaNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/personal-information-icon.png"))); // NOI18N
+        btnCaNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Personal-icon.png"))); // NOI18N
 
-        btnHuongDan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Blue-Utilities-icon.png"))); // NOI18N
+        btnHuongDan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Help-icon.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

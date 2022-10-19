@@ -308,14 +308,14 @@
         <Component class="javax.swing.JButton" name="btnKhoNguyenLieu">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMG/images (1).png"/>
+              <Image iconType="3" name="/icon/Kho-icon.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnThucDon">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMG/Untitled (1).png"/>
+              <Image iconType="3" name="/icon/Menu-icon.png"/>
             </Property>
           </Properties>
           <Events>
@@ -325,7 +325,7 @@
         <Component class="javax.swing.JButton" name="btnHoaDon1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMG/Windows-View-Detail-icon.png"/>
+              <Image iconType="3" name="/icon/HoaDon-icon.png"/>
             </Property>
           </Properties>
         </Component>
@@ -359,21 +359,21 @@
         <Component class="javax.swing.JButton" name="btnCaTruc">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMG/Slideshare-icon.png"/>
+              <Image iconType="3" name="/icon/CaTruc-icon.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnCaNhan">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMG/personal-information-icon.png"/>
+              <Image iconType="3" name="/icon/Personal-icon.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnHuongDan1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMG/Blue-Utilities-icon.png"/>
+              <Image iconType="3" name="/icon/Help-icon.png"/>
             </Property>
           </Properties>
         </Component>

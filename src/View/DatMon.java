@@ -86,6 +86,11 @@ public class DatMon extends javax.swing.JFrame implements Runnable {
         btnThoat = new javax.swing.JButton();
         btnDanhMuc = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        btnSinhTo = new javax.swing.JButton();
+        btnBia = new javax.swing.JButton();
+        btnNuocNgot = new javax.swing.JButton();
+        btnNuocEp = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnKhaiVi = new javax.swing.JButton();
         btnMonSup = new javax.swing.JButton();
@@ -96,11 +101,6 @@ public class DatMon extends javax.swing.JFrame implements Runnable {
         btnMonRau = new javax.swing.JButton();
         btnGoi = new javax.swing.JButton();
         btnMonLau = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        btnSinhTo = new javax.swing.JButton();
-        btnBia = new javax.swing.JButton();
-        btnNuocNgot = new javax.swing.JButton();
-        btnNuocEp = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -237,6 +237,87 @@ public class DatMon extends javax.swing.JFrame implements Runnable {
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jPanel5.setBackground(new java.awt.Color(255, 204, 102));
+
+        btnSinhTo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Mai-Tai-icon.png"))); // NOI18N
+        btnSinhTo.setText("Sinh Tố");
+        btnSinhTo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSinhTo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnSinhTo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSinhTo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSinhToActionPerformed(evt);
+            }
+        });
+
+        btnBia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Beer-2-icon.png"))); // NOI18N
+        btnBia.setText("Các Loại Bia");
+        btnBia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnBia.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnBia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnBia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBiaActionPerformed(evt);
+            }
+        });
+
+        btnNuocNgot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/7up-icon.png"))); // NOI18N
+        btnNuocNgot.setText("Nước Ngọt");
+        btnNuocNgot.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnNuocNgot.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnNuocNgot.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnNuocNgot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuocNgotActionPerformed(evt);
+            }
+        });
+
+        btnNuocEp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Orange-Juice-icon.png"))); // NOI18N
+        btnNuocEp.setText("Nước Ép");
+        btnNuocEp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnNuocEp.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnNuocEp.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnNuocEp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuocEpActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnSinhTo))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(btnBia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNuocNgot)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(btnNuocEp, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBia)
+                    .addComponent(btnNuocNgot))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnNuocEp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSinhTo)
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Thức Uống", jPanel5);
+
         jPanel3.setBackground(new java.awt.Color(255, 204, 102));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -345,29 +426,24 @@ public class DatMon extends javax.swing.JFrame implements Runnable {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnMonRau, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnMonBo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnKhaiVi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnGoi, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnMonGa, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMonSup, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnKhaiVi, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(btnMonSup)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnHaiSan))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnMonRau, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnGoi, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMonLau, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnMonBo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(btnMonGa)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnMonHeo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(btnMonHeo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnMonLau, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnHaiSan))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnGoi, btnHaiSan, btnMonGa, btnMonHeo, btnMonLau, btnMonRau, btnMonSup});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnHaiSan, btnMonHeo, btnMonLau});
 
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,84 +469,6 @@ public class DatMon extends javax.swing.JFrame implements Runnable {
         jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnGoi, btnHaiSan, btnKhaiVi, btnMonBo, btnMonGa, btnMonHeo, btnMonLau, btnMonRau, btnMonSup});
 
         jTabbedPane1.addTab("Món Ăn", jPanel3);
-
-        jPanel5.setBackground(new java.awt.Color(255, 204, 102));
-
-        btnSinhTo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Mai-Tai-icon.png"))); // NOI18N
-        btnSinhTo.setText("Sinh Tố");
-        btnSinhTo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnSinhTo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btnSinhTo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnSinhTo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSinhToActionPerformed(evt);
-            }
-        });
-
-        btnBia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Beer-2-icon.png"))); // NOI18N
-        btnBia.setText("Các Loại Bia");
-        btnBia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnBia.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btnBia.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnBia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBiaActionPerformed(evt);
-            }
-        });
-
-        btnNuocNgot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/7up-icon.png"))); // NOI18N
-        btnNuocNgot.setText("Nước Ngọt");
-        btnNuocNgot.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnNuocNgot.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btnNuocNgot.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnNuocNgot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuocNgotActionPerformed(evt);
-            }
-        });
-
-        btnNuocEp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Orange-Juice-icon.png"))); // NOI18N
-        btnNuocEp.setText("Nước Ép");
-        btnNuocEp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnNuocEp.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        btnNuocEp.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnNuocEp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuocEpActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNuocNgot)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btnSinhTo)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(btnNuocEp, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBia)
-                    .addComponent(btnNuocNgot)
-                    .addComponent(btnNuocEp))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSinhTo)
-                .addContainerGap(120, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Thức Uống", jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 102));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hóa Đơn", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 24))); // NOI18N

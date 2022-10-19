@@ -1,6 +1,5 @@
 package View;
 
-import Controller.MySqlConnection;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,7 +19,7 @@ public class SoDoBan extends javax.swing.JFrame {
         btnSoDoBan.setForeground(Color.red);
         /* Gọi phương thức getMySqlConnection trong Class MySqlConnection để tạo kết nối Database 
         và lưu vào biến toàn cục (không cần kết nối nhiều lần)*/
-        con = MySqlConnection.getMySqlConnection("QLNHAHANG_NHOM3");
+        con = .getMySqlConnection("QLNHAHANG_NHOM3");
         btnDatCho.setForeground(Color.red);
         btnDatMon.setForeground(Color.gray);
     }

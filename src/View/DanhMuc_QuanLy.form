@@ -333,7 +333,7 @@
         <Component class="javax.swing.JButton" name="btnDatMon1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon/Order-icon.png"/>
+              <Image iconType="3" name="/IMG/Food-Dome-icon.png"/>
             </Property>
           </Properties>
           <Events>
@@ -343,7 +343,7 @@
         <Component class="javax.swing.JButton" name="btnHoaDon">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon/HoaDon-icon.png"/>
+              <Image iconType="3" name="/IMG/chart-icon.png"/>
             </Property>
           </Properties>
           <Events>
@@ -374,13 +374,13 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="H&#xf3;a &#x110;&#x1a1;n"/>
+            <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n L&#xfd;-Th&#x1ed1;ng K&#xea;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnCaTruc">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon/CaTruc-icon.png"/>
+              <Image iconType="3" name="/IMG/Document-icon.png"/>
             </Property>
           </Properties>
           <Events>
@@ -390,7 +390,7 @@
         <Component class="javax.swing.JButton" name="btnCaNhan">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon/Personal-icon.png"/>
+              <Image iconType="3" name="/IMG/Slideshare-icon.png"/>
             </Property>
           </Properties>
           <Events>
@@ -400,7 +400,7 @@
         <Component class="javax.swing.JButton" name="btnHuongDan1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon/Help-icon.png"/>
+              <Image iconType="3" name="/IMG/User-Administrator-Blue-icon (1).png"/>
             </Property>
           </Properties>
           <Events>
@@ -413,7 +413,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Ca Tr&#x1ef1;c"/>
+            <Property name="text" type="java.lang.String" value="H&#x1b0;&#x1edb;ng D&#x1eab;n"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
@@ -422,7 +422,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="C&#xe1; Nh&#xe2;n"/>
+            <Property name="text" type="java.lang.String" value="Ca Tr&#x1ef1;c"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -431,7 +431,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="H&#x1b0;&#x1edb;ng D&#x1eab;n"/>
+            <Property name="text" type="java.lang.String" value="C&#xe1; Nh&#xe2;n"/>
           </Properties>
         </Component>
       </SubComponents>

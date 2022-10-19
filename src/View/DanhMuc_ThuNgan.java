@@ -136,21 +136,21 @@ public class DanhMuc_ThuNgan extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("CHÀO MỪNG BẠN ĐẾN VỚI NHÀ HÀNG ĐẸP VÀ ĐỘC");
 
-        btnSoDoBan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/SkyBlue-Seat-icon.png"))); // NOI18N
+        btnSoDoBan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Seat-icon.png"))); // NOI18N
         btnSoDoBan1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSoDoBan1ActionPerformed(evt);
             }
         });
 
-        btnDatMon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Food-Dome-icon.png"))); // NOI18N
+        btnDatMon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Order-icon.png"))); // NOI18N
         btnDatMon1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDatMon1ActionPerformed(evt);
             }
         });
 
-        btnHoaDon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Windows-View-Detail-icon.png"))); // NOI18N
+        btnHoaDon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/HoaDon-icon.png"))); // NOI18N
         btnHoaDon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHoaDonActionPerformed(evt);
@@ -169,21 +169,21 @@ public class DanhMuc_ThuNgan extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Hóa Đơn");
 
-        btnCaTruc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Slideshare-icon.png"))); // NOI18N
+        btnCaTruc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/CaTruc-icon.png"))); // NOI18N
         btnCaTruc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCaTrucActionPerformed(evt);
             }
         });
 
-        btnCaNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/personal-information-icon.png"))); // NOI18N
+        btnCaNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Personal-icon.png"))); // NOI18N
         btnCaNhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCaNhanActionPerformed(evt);
             }
         });
 
-        btnHuongDan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Blue-Utilities-icon.png"))); // NOI18N
+        btnHuongDan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Help-icon.png"))); // NOI18N
         btnHuongDan1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHuongDan1ActionPerformed(evt);
