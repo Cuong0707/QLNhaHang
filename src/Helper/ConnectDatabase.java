@@ -38,17 +38,16 @@ public class ConnectDatabase {
     public static PreparedStatement getStmt(String sql, Object... args) {
         Connection connect = getSqlConnection("sa", "123456", "QLNHAHANG_NHOM3", 1433);
         PreparedStatement pstmt = null;
-        
         try {
-            pstmt = sql.trim().startsWith("{") ? connect.prepareCall(sql) : connect.prepareStatement(sql);
-            /* Minh bạch:
-                if (sql.trim().startsWith("{")) {
-                    pstmt = conn.prepareCall(sql);
-                } 
-                else {
-                    pstmt = conn.prepareStatement(sql);
-                } 
-             */
+            pstmt = connect.prepareCall(sql) ;
+
+//                if (sql.trim().startsWith("{")) {
+//                    pstmt = connect.prepareCall(sql);
+//                } 
+//                else {
+//                    pstmt = connect.prepareStatement(sql);
+//                } 
+             
 
             for (int i = 0; i < args.length; i++) {
                 pstmt.setObject(i + 1, args[i]);

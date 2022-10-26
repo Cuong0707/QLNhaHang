@@ -7,6 +7,7 @@ import Dao.KhachHangDAO;
 import Dao.NguyenlieuDAO;
 import Dao.NhanVienDAO;
 import Dao.PhieuNhapDAO;
+import Dao.ThongKeDao;
 import Helper.OutputExcel;
 import Model.CaTruc;
 import Model.KhachHang;
@@ -54,9 +55,6 @@ public class ThongKe extends javax.swing.JFrame {
         pnlNhanvien = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNhanVien = new javax.swing.JTable();
-        pnlHoadon = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblHoadon = new javax.swing.JTable();
         pnlPhieunhap = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblPhieunhap = new javax.swing.JTable();
@@ -69,6 +67,18 @@ public class ThongKe extends javax.swing.JFrame {
         pnlCatruc = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblCaTruc = new javax.swing.JTable();
+        pnlHoadon = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblHoadon = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        txtMahd = new javax.swing.JTextField();
+        btnThongKe = new javax.swing.JButton();
+        txtNgay = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnDanhmuc = new javax.swing.JMenu();
         mnThemmoi = new javax.swing.JMenu();
@@ -259,45 +269,6 @@ public class ThongKe extends javax.swing.JFrame {
 
         tabpnlQuanLy.addTab("Nhân Viên", pnlNhanvien);
 
-        pnlHoadon.setBackground(new java.awt.Color(255, 255, 204));
-        pnlHoadon.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                pnlHoadonComponentShown(evt);
-            }
-        });
-
-        tblHoadon.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Mã Hóa Đơn", "Ngày Lập Hóa Đơn", "Người Lập Hóa Đơn", "Hình Thức Thanh Toán", "Mã Khách Hàng"
-            }
-        ));
-        jScrollPane2.setViewportView(tblHoadon);
-
-        javax.swing.GroupLayout pnlHoadonLayout = new javax.swing.GroupLayout(pnlHoadon);
-        pnlHoadon.setLayout(pnlHoadonLayout);
-        pnlHoadonLayout.setHorizontalGroup(
-            pnlHoadonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHoadonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        pnlHoadonLayout.setVerticalGroup(
-            pnlHoadonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlHoadonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        tabpnlQuanLy.addTab("Hóa Đơn", pnlHoadon);
-
         pnlPhieunhap.setBackground(new java.awt.Color(255, 255, 204));
         pnlPhieunhap.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
@@ -453,6 +424,126 @@ public class ThongKe extends javax.swing.JFrame {
         );
 
         tabpnlQuanLy.addTab("Ca Trực", pnlCatruc);
+
+        pnlHoadon.setBackground(new java.awt.Color(255, 255, 204));
+        pnlHoadon.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                pnlHoadonComponentShown(evt);
+            }
+        });
+
+        tblHoadon.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Mã Hóa Đơn", "Ngày Lập Hóa Đơn", "Người Lập Hóa Đơn", "Hình Thức Thanh Toán", "Mã Khách Hàng"
+            }
+        ));
+        jScrollPane2.setViewportView(tblHoadon);
+
+        jLabel4.setText("Chi Tiết");
+
+        jLabel5.setText("Thống Kê Hóa Đơn");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Xem Thống Kê"));
+
+        jLabel6.setText("Mã Hóa Đơn: ");
+
+        btnThongKe.setText("Tổng Tiền Hóa Đơn");
+        btnThongKe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThongKeActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Ngày: ");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtMahd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNgay, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnThongKe, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtMahd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnThongKe)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7)
+                        .addComponent(txtNgay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlHoadonLayout = new javax.swing.GroupLayout(pnlHoadon);
+        pnlHoadon.setLayout(pnlHoadonLayout);
+        pnlHoadonLayout.setHorizontalGroup(
+            pnlHoadonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHoadonLayout.createSequentialGroup()
+                .addGroup(pnlHoadonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlHoadonLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlHoadonLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2)))
+                .addContainerGap())
+            .addGroup(pnlHoadonLayout.createSequentialGroup()
+                .addGap(273, 273, 273)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlHoadonLayout.setVerticalGroup(
+            pnlHoadonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHoadonLayout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        tabpnlQuanLy.addTab("Hóa Đơn", pnlHoadon);
 
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuBar1.setMaximumSize(new java.awt.Dimension(710, 29));
@@ -642,6 +733,10 @@ public class ThongKe extends javax.swing.JFrame {
         this.showTablencatruc();
     }//GEN-LAST:event_pnlCatrucComponentShown
 
+    private void btnThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongKeActionPerformed
+        this.thongKe();
+    }//GEN-LAST:event_btnThongKeActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -651,14 +746,21 @@ public class ThongKe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnThongKe;
     private javax.swing.JButton btnXemchitiet;
     private javax.swing.JButton btnXuatfile;
     private javax.swing.JComboBox<String> cboChoncot;
     private javax.swing.JComboBox<String> cboSapxeptheo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -684,6 +786,8 @@ public class ThongKe extends javax.swing.JFrame {
     private javax.swing.JTable tblNguyenLieu;
     private javax.swing.JTable tblNhanVien;
     private javax.swing.JTable tblPhieunhap;
+    private javax.swing.JTextField txtMahd;
+    private javax.swing.JTextField txtNgay;
     private javax.swing.JTextField txtTimkiem;
     // End of variables declaration//GEN-END:variables
 
@@ -694,6 +798,7 @@ public class ThongKe extends javax.swing.JFrame {
     NguyenlieuDAO NLDao = new NguyenlieuDAO();
     KhachHangDAO KHDao = new KhachHangDAO();
     CaTrucDAO CTDao = new CaTrucDAO();
+    ThongKeDao TKDao = new ThongKeDao();
     
     NhanVien nhanVien = new NhanVien();
     Model.HoaDon hoaDon = new Model.HoaDon();
@@ -1089,6 +1194,14 @@ public class ThongKe extends javax.swing.JFrame {
         if(a==JOptionPane.YES_OPTION)
         {
             System.exit(0);
+        }
+    }
+    public void thongKe()
+    {
+        List<Object[]> list; 
+        list = TKDao.getDoanhThu((Integer.valueOf(txtMahd.getText())),txtNgay.getText());
+        for(Object[] row : list){
+            JOptionPane.showMessageDialog(this, row);
         }
     }
 }
